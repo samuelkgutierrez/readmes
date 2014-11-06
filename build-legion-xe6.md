@@ -16,8 +16,10 @@ module swap  PrgEnv-pgi  PrgEnv-gnu
 ```bash
 # Setup install prefix environment variable for future use.
 export GASNET_HOME=/gasnet/install/path
+
 # Untar distribution and cd into the created distribution directory.
 tar xzf GASNet-1.24.0.tar.gz && cd GASNet-1.24.0
+
 # Configure (NOTE: use --enable-cross-compile if necessary)
 ./configure --prefix=$GASNET_HOME \
 --enable-gemini \
@@ -44,7 +46,7 @@ This requires (at the moment) that you modify your application's Makefile.
 - Add **CONDUIT := gemini** to the Makefile. This is how one specifies which
   GASNet conduit will be used for this particular build.
 
-- Change **OUTPUT_LEVEL=LEVEL_DEBUG** to **OUTPUT_LEVEL=LEVEL_ERROR* to silence
+- Change **OUTPUT_LEVEL=LEVEL_DEBUG** to **OUTPUT_LEVEL=LEVEL_ERROR** to silence
   lots of Legion debugging output.
 
 - Add **USE_CUDA := 0**, since the XE6 does not have GPUs.
