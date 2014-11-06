@@ -38,13 +38,13 @@ make -j4 && make install
 This requires (at the moment) that you modify your application's Makefile.
 
 - Change **SHARED_LOWLEVEL=1** to **SHARED_LOWLEVEL=0**. This tells Legion to
-  use the GASNet version.
+  use its GASNet version of its low-level runtime.
 
 - Add **GASNET_ROOT := [value of $GASNET_HOME]**. This specifies the
-  installation prefix of GASNe to the Legion build system.
+  installation prefix of GASNet to the Legion build system.
 
 - Add **CONDUIT := gemini** to the Makefile. This is how one specifies which
-  GASNet conduit will be used for this particular build.
+  GASNet conduit will be used for a particular build.
 
 - Change **OUTPUT_LEVEL=LEVEL_DEBUG** to **OUTPUT_LEVEL=LEVEL_ERROR** to silence
   lots of Legion debugging output.
