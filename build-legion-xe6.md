@@ -79,5 +79,5 @@ msub -I -l nodes=2:ppn=16,walltime=01:00:00
 ```bash
 # Notice that we are running 1 process per node and turning off process
 # affinity.
-aprun -cc none -n 2 -N ./my-legion-app
+aprun -cc none -n 2 -N 1 ./my-legion-app
 ```
