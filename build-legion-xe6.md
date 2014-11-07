@@ -1,11 +1,11 @@
 Building and Running Legion Applications on a Cray XE6
 ======================================================
 
-Last Updated: Thu Nov  6 11:50:56 MST 2014
+**Last Updated:** Thu Nov  6 17:20:24 MST 2014
 
 ## Building Legion for the Cray XE6
 
-- Swap out current programming environment
+- Swap out current programming environment.
 
 ```bash
 module swap  PrgEnv-pgi  PrgEnv-gnu
@@ -20,7 +20,7 @@ export GASNET_HOME=/gasnet/install/path
 # Untar distribution and cd into the created distribution directory.
 tar xzf GASNet-1.24.0.tar.gz && cd GASNet-1.24.0
 
-# Configure (NOTE: use --enable-cross-compile if necessary)
+# Configure (NOTE: use --enable-cross-compile if necessary).
 ./configure --prefix=$GASNET_HOME \
 --enable-gemini \
 GNI_INCLUDES="-I/opt/cray/gni-headers/default/include -I/opt/cray/pmi/default/include" \
@@ -29,11 +29,11 @@ GNI_LIBS="-L/opt/cray/ugni/default/lib64/ -lugni -L/opt/cray/pmi/default/lib64 -
 --enable-segment-fast --disable-aligned-segments --disable-pshm \
 --with-segment-mmap-max=4GB
 
-# Build and install it
+# Build and install it.
 make -j4 && make install
 ```
 
-- Build your [Legion](http://legion.stanford.edu/) Application
+- Build your [Legion](http://legion.stanford.edu/) application.
 
 This requires (at the moment) that you modify your application's Makefile.
 
@@ -52,7 +52,7 @@ This requires (at the moment) that you modify your application's Makefile.
 - Add **USE_CUDA := 0**, since the XE6 does not have GPUs.
 
 - Modify **LD_FLAGS** to include some linker flags that are required for PMI and
-  uGNI For example:
+  uGNI. For example:
 
 ```
 LD_FLAGS := \
@@ -78,6 +78,7 @@ msub -I -l nodes=2:ppn=16,walltime=01:00:00
 
 ```bash
 # Notice that we are running 1 process per node and turning off process
-# affinity.
+# affinity. Not sure if turning off process affinity is needed. We should
+# probably ask...
 aprun -cc none -n 2 -N 1 ./my-legion-app
 ```
