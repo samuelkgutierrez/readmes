@@ -7,13 +7,13 @@ Building and Running Legion Applications on a Cray XE6
 
 - Swap out current programming environment.
 
-```bash
+```
 module swap  PrgEnv-pgi  PrgEnv-gnu
 ```
 
 - Build [GASNet](http://gasnet.lbl.gov/).
 
-```bash
+```
 # Setup install prefix environment variable for future use.
 export GASNET_HOME=/gasnet/install/path
 
@@ -60,7 +60,7 @@ LD_FLAGS := \
 -L/opt/cray/ugni/default/lib64 -lugni
 ```
 
-```bash
+```
 export LG_RT_DIR=/path/to/legion/runtime
 make -j4
 ```
@@ -70,13 +70,13 @@ At this point, you should have a Legion executable.
 
 - Get an allocation. For example:
 
-```bash
+```
 msub -I -l nodes=2:ppn=16,walltime=01:00:00
 ```
 
 - Run. For example:
 
-```bash
+```
 # Notice that we are running 1 process per node and turning off process
 # affinity. Not sure if turning off process affinity is needed. We should
 # probably ask...
