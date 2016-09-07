@@ -12,3 +12,6 @@ qmake -project
 qmake
 make
 ```
+
+## Editor Things
+Enable FakeVIM

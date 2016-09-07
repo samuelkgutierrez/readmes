@@ -1,0 +1,4 @@
+# To get directly onto KNL compute nodes.
+module load ccm
+ccmlogin
+passwd
