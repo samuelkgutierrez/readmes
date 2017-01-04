@@ -1,0 +1,15 @@
+gprof
+=====
+
+Compile and STATICALLY!!! link with -pg
+
+# So each process will write its output to a separate file.
+export GMON_OUT_PREFIX=gmon
+
+# Run application
+
+# Consolidate profiles
+gprof -s [app-name] gmon.*
+
+# View consolidated report
+gprof [app-name] gmon.sum
