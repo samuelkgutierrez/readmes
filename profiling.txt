@@ -17,4 +17,14 @@ gprof [app-name] gmon.sum
 perf
 ====
 
+Nice video: "Tuning C++: Benchmarks, and CPUs, and Compilers! Oh My!"
+|
+|--> Turn off optimizer: https://www.youtube.com/watch?v=nXaxk27zwlk
+
+** Include -fno-omit-frame-pointer in flags for useful call-path info. **
+
 perf stat [app-name]
+
+perf record -g [app-name]
+
+perf report -g 'graph,0.5,caller'
