@@ -13,3 +13,8 @@ gprof -s [app-name] gmon.*
 
 # View consolidated report
 gprof [app-name] gmon.sum
+
+perf
+====
+
+perf stat [app-name]
