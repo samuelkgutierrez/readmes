@@ -1,10 +1,2 @@
-cmake -DTPL_ENABLE_MPI=ON -DMPI_BASE_DIR=/home/samuel/local/ompi/10.7-gnu \
--DTrilinos_ENABLE_ALL_PACKAGES=ON -DTrilinos_ENABLE_ALL_PACKAGES=ON \
--DCMAKE_INSTALL_PREFIX=$HOME/local/trilinos -DTPL_ENABLE_Netcdf=OFF \
--DTPL_ENABLE_X11=OFF -DBLAS_LIBRARY_DIRS=/usr/lib/libblas \
--DTPL_LAPACK_LIBRARIES=/usr/lib/lapack/liblapack.so.3 \
--DTrilinos_ENABLE_TESTS=ON -DTrilinos_ENABLE_EXAMPLES=ON \
--DTrilinos_ENABLE_OpenMP=ON -DMueLu_ENABLE_Kokkos_Refactor=ON \
--DXpetra_ENABLE_Kokkos_Refactor=ON -DTPL_ENABLE_QUO=ON \
--DQUO_LIBRARY_DIRS=/home/samuel/local/quo/lib \
--DQUO_INCLUDE_DIRS=$HOME/local/quo/include ..
+wget -P /etc/yum.repos.d http://build.openhpc.community/OpenHPC:/1.3:/Update4:/Factory/CentOS_7/OpenHPC:1.3:Update4:Factory.repo
+yum install trilinos-gnu7-openmpi3-ohpc
