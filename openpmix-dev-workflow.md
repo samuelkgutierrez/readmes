@@ -27,3 +27,10 @@ git pull origin master
 git checkout feature
 git rebase master
 git push --force origin feature
+
+## Resolving Conflicts (Sweeping)
+git checkout feature
+git rebase -Xours origin/master # Favor master's content
+git rebase --continue
+
+https://stackoverflow.com/questions/63611460/git-pull-rebase-resolve-conflicts-by-keeping-local-changes
