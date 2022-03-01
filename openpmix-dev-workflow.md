@@ -34,3 +34,20 @@ git rebase -Xours origin/master # Favor master's content
 git rebase --continue
 
 https://stackoverflow.com/questions/63611460/git-pull-rebase-resolve-conflicts-by-keeping-local-changes
+
+## Testing
+```
+# Build and install OpenPMIx
+./configure --prefix=/home/samuel/local/openpmix/gds-shmem && make -j && make install
+
+# Build Open MPI
+./configure --prefix=/home/samuel/local/openpmix/ompi --with-pmix=/home/samuel/local/openpmix/gds-shmem --disable-man-pages && make -j && make install
+
+PATH=/home/samuel/local/openpmix/ompi/bin:/home/samuel/local/openpmix/gds-shmem/bin:$PATH
+export LD_LIBRARY_PATH=/home/samuel/local/openpmix/ompi/lib:$LD_LIBRARY_PATH
+```
+
+## Debug
+```
+export PMIX_MCA_gds_base_verbose=1
+```
