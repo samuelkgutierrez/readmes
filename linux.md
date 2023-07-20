@@ -6,3 +6,4 @@ Linux Things
 
 ## Useful Commands
 ```namei -l path```
+mpstat to view CPU usage
